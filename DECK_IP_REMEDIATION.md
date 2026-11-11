@@ -1,14 +1,14 @@
 # Presentation IP remediation
 
-Review date: 2026-11-11. Repository: `pulkitxm/claude-directory-ppt`. Local branch: `ip-remediation-deck`, based on `c19bbd3f749848fcefb0af23bb77fdb8235a2e6e`.
+Review and deployment date: 2026-11-11. Repository: `pulkitxm/claude-directory-ppt`. The withdrawal was squash merged into `main` as `e8609eb25f50ab55cf2979b674c78648ec939b3f`.
 
-The owner approved publishing this withdrawal on a dedicated review branch and creating a pull request on 2026-11-11. Branch publication is authorized; merging, deployment, history rewrites, and cache purges remain pending separate approval. No original deck or recording was uploaded as review evidence.
+The owner approved review publication, merge, and deployment. The text-only withdrawal is now merged, deployed, and verified on the canonical public site. Historical content in Git history, forks, or external caches remains subject to a separate approved remediation plan. No original deck or recording was uploaded as review evidence.
 
 ## Review publication
 
-The withdrawal is published for review in [pull request 3](https://github.com/pulkitxm/claude-directory-ppt/pull/3) on `ip-remediation-deck`. The complete withdrawal checkpoint is `ea108ef24e99c07fc5aa06994657ba835d922cf1`. The remote branch contains only the two notice documents, documentation, workflow, and source checker; both disputed media-bearing artifacts are absent.
+[Pull request 3](https://github.com/pulkitxm/claude-directory-ppt/pull/3) was squash merged through Pukbot, and its remote review branch was deleted. The complete withdrawal checkpoint was `ea108ef24e99c07fc5aa06994657ba835d922cf1`; the reviewed merge is `e8609eb25f50ab55cf2979b674c78648ec939b3f`. Both disputed media-bearing artifacts are absent from the current source tree.
 
-The first review run passed `verify` and skipped `deploy`: [workflow run](https://github.com/pulkitxm/claude-directory-ppt/actions/runs/43006150137). The latest Pages deployment remains the original 2026-08-24 deployment listed below. No merge, deployment, history rewrite, or cache purge was requested or performed.
+The required review and post-merge verification checks passed. The owner-authorized `publish=true` dispatch completed successfully in [deployment run 43009863289](https://github.com/pulkitxm/claude-directory-ppt/actions/runs/43009863289), producing GitHub Pages deployment `7708524878` from the reviewed merge. No history rewrite, force-push, or cache purge was performed.
 
 ## Scope and findings
 
@@ -46,26 +46,28 @@ The former workflow uploaded the entire repository and deployed automatically on
 
 ## Live deployment and historical content
 
-| URL or destination | Observation on review date | Status |
+The earlier live presentation and direct media URLs returned 200 before the withdrawal. The deployed replacement was verified at 11:12 UTC on 2026-11-11 using the canonical URLs, with and without cache-control headers and without query-string cache busting.
+
+| URL or destination | Deployed observation | Status |
 | --- | --- | --- |
-| `https://pulkitxm.github.io/claude-directory-ppt/` | HEAD 200, Content-Length 21,234,808, Last-Modified 2026-08-24, Cache-Control max-age=600 | Old presentation still public; replacement pending approval |
-| `https://pulkitxm.github.io/claude-directory-ppt/claude-directory-deck.html` | HEAD 200, same content length and cache metadata | Old direct deck URL still public; removal pending approval |
-| `https://pulkitxm.github.io/claude-directory-ppt/promo-x.mp4` | HEAD 200, Content-Length 57,042,795, same cache metadata | Recording still public; removal pending approval |
-| GitHub Pages environment `github-pages` | Last successful deployment `6069409964`, source `c19bbd3f749848fcefb0af23bb77fdb8235a2e6e` | Fresh allowlisted deployment required |
-| GitHub releases and tags | API returned no releases or tags | No release/tag deletion identified in this repository |
-| GitHub Actions artifacts | API returned zero artifacts | Recheck before publication; do not reuse an old build |
-| Source history and forks/caches | Historical HTML embeds and recording remain reachable from published Git history | Separate owner/legal review and approved history-removal plan required |
+| `https://pulkitxm.github.io/claude-directory-ppt/` | 200, Content-Length 1,270, Last-Modified 2026-11-11 11:11:47 UTC, Cache-Control max-age=600 | Original text-only notice verified; no embedded or remote media |
+| `https://pulkitxm.github.io/claude-directory-ppt/claude-directory-deck.html` | Canonical HEAD 404, Content-Length 1,239 | Withdrawn; no old response body downloaded |
+| `https://pulkitxm.github.io/claude-directory-ppt/promo-x.mp4` | Canonical HEAD 404, Content-Length 1,239 | Withdrawn; no recording downloaded |
+| GitHub Pages environment `github-pages` | Successful deployment `7708524878`, source `e8609eb25f50ab55cf2979b674c78648ec939b3f` | Fresh two-file notice artifact deployed |
+| GitHub releases and tags | Review API returned no releases or tags | No release/tag removal identified |
+| GitHub Actions artifacts | Deployment builds only the verified two-file notice artifact | Original deck and media are not included |
+| Source history and forks/external caches | Historical HTML embeds and recording remain reachable from published Git history | Separate owner/legal review and approved history-removal plan required |
+
+Ordinary canonical cache responses also returned the new notice and both 404 outcomes, with observed Age 13 seconds. No stale original bytes were observed at this vantage. Other caches, historical URLs, forks, and external copies are not cleared by these checks.
 
 GitHub Pages has no custom domain for this repository and HTTPS enforcement is enabled. The public presentation also links the directory repository and portfolio gallery, so all three source repositories need coordinated review. The directory and portfolio edits do not update this independent Pages deployment automatically.
 
 ## Verification and pending actions
 
-The text-only source and explicit publishing artifact checker passed. Actionlint passed for the revised workflow. Browser checks at 375px and 1440px passed: the root notice renders, no media or external-loading elements exist, and there is no horizontal overflow. The local publishing server returned 404 for `claude-directory-deck.html` and `promo-x.mp4`. These are local checks; live withdrawal remains pending approval.
+The text-only source and explicit publishing artifact checker passed. Actionlint passed for the revised workflow. Browser checks at 375px and 1440px passed: the root notice renders, no media or external-loading elements exist, and there is no horizontal overflow. Local and deployed checks confirm the old direct deck and recording paths return 404. The successful live deployment is recorded above.
 
-1. Review the authorized withdrawal branch and pull request. Only the review publication was approved; merging and deployment remain pending. Do not attach the original recording or deck as public evidence.
-2. After approved merge, explicitly dispatch the workflow with `publish=true` for the reviewed `main` revision. Configure required owner review on the `github-pages` environment where available.
-3. Verify the actual root notice and 404 responses for both the old direct deck path and the standalone MP4. Verify the root response contains no embedded base64 media and no remote assets.
-4. Recheck after the observed 600-second cache window; request GitHub/CDN invalidation if old bytes remain. Review cached presentation previews and any external copies separately.
-5. Coordinate removal of the historical MP4 and embedded HTML payloads with the owner and appropriate licensing/legal review. An approved rewrite, if chosen, must account for contributors, branches, commit URLs, forks and caches. Do not force-push or rewrite published history automatically.
+1. Review historical Git commits, forks, cached presentation previews, and external copies with the owner and appropriate licensing/legal review. Current source and live-site withdrawal does not erase historical copies.
+2. If historical removal is approved separately, coordinate the MP4 and embedded HTML payload removal across contributors, branches, commit URLs, forks, and caches. Do not force-push or rewrite published history automatically.
+3. Recheck other cache locations if a stale original response is reported; request a provider/CDN invalidation only when required and authorized.
 
-Deployment and historical cleanup remain pending approval. Branch publication does not withdraw the current live site, and local checks do not mean the live site has been remediated.
+Current source and the managed public Pages deployment have been remediated and verified. Only historical or external-copy review remains pending. This is an operational withdrawal record, not a legal-compliance determination. This documentation update does not change the served two-file artifact and requires no additional deployment.
