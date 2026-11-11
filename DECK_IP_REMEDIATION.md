@@ -4,6 +4,12 @@ Review date: 2026-11-11. Repository: `pulkitxm/claude-directory-ppt`. Local bran
 
 The owner approved publishing this withdrawal on a dedicated review branch and creating a pull request on 2026-11-11. Branch publication is authorized; merging, deployment, history rewrites, and cache purges remain pending separate approval. No original deck or recording was uploaded as review evidence.
 
+## Review publication
+
+The withdrawal is published for review in [pull request 3](https://github.com/pulkitxm/claude-directory-ppt/pull/3) on `ip-remediation-deck`. The complete withdrawal checkpoint is `ea108ef24e99c07fc5aa06994657ba835d922cf1`. The remote branch contains only the two notice documents, documentation, workflow, and source checker; both disputed media-bearing artifacts are absent.
+
+The first review run passed `verify` and skipped `deploy`: [workflow run](https://github.com/pulkitxm/claude-directory-ppt/actions/runs/43006150137). The latest Pages deployment remains the original 2026-08-24 deployment listed below. No merge, deployment, history rewrite, or cache purge was requested or performed.
+
 ## Scope and findings
 
 Every tracked file in the current source tree was inspected: the README, ignore file, deployment workflow, two presentation HTML paths, and standalone promotional recording metadata. There are no other project directories. No repository license or asset-provenance record was present for the old presentation/media.
